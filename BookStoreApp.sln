@@ -9,6 +9,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreApp.Blazor.Server.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreApp.Blazor.WebAssembly.UI", "BookStoreApp.Blazor.WebAssembly.UI\BookStoreApp.Blazor.WebAssembly.UI.csproj", "{2286DFFE-6C93-489B-B56E-6CF95A17FC91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{644C5D1C-7F94-41DD-8FE9-5D1EDF76FDC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{6220A9C5-5A8C-46DB-9428-79D0EBD90AE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{01FE9483-B5CB-4EA2-8293-605297CFD1B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E207641F-832E-4B89-B05A-AB0C1678352A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6B399C7C-7D76-4BAD-9017-62953F28E6E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{37B99B2E-D5DF-436D-B1C8-CBC9F1A6453C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +42,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E0C3626-8E60-4D68-B97C-A927636268A4} = {01FE9483-B5CB-4EA2-8293-605297CFD1B7}
+		{BE75DA67-CD5C-4D47-8E90-3159745F0139} = {6220A9C5-5A8C-46DB-9428-79D0EBD90AE6}
+		{2286DFFE-6C93-489B-B56E-6CF95A17FC91} = {6220A9C5-5A8C-46DB-9428-79D0EBD90AE6}
+		{6220A9C5-5A8C-46DB-9428-79D0EBD90AE6} = {644C5D1C-7F94-41DD-8FE9-5D1EDF76FDC1}
+		{01FE9483-B5CB-4EA2-8293-605297CFD1B7} = {644C5D1C-7F94-41DD-8FE9-5D1EDF76FDC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E93E4E7-A15F-46DE-BB85-3A020EBF1B8D}
