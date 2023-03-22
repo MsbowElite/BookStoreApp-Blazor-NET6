@@ -3,9 +3,9 @@ using BookStoreApp.API.Data;
 using BookStoreApp.API.Endpoints.Internal;
 using BookStoreApp.API.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
@@ -18,9 +18,8 @@ builder.Services.AddEndpoints<Program>(builder.Configuration);
 
 //builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
-// Add services to the container.
-var connString = builder.Configuration.GetConnectionString("BookStoreAppDbConnection");
-builder.Services.AddDbContext<BookStoreDbContext>(options => options.UseSqlServer(connString));
+builder.Services.AddDbContext<BookStoreDbContext>(options => 
+    options.UseSqlite(builder.Configuration.GetConnectionString("BookStoreAppDbConnection")));
 
 builder.Services.AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
