@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using BookStoreApp.API.Data;
 using BookStoreApp.API.Endpoints.Internal;
 using BookStoreApp.API.Models.Author;
 using BookStoreApp.API.Repositories;
+using LibraryStore.Domain.Entities;
+using LibraryStore.Domain.Repositories;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BookStoreApp.API.Endpoints

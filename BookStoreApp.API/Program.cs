@@ -1,7 +1,8 @@
 using BookStoreApp.API.Configurations;
-using BookStoreApp.API.Data;
 using BookStoreApp.API.Endpoints.Internal;
 using BookStoreApp.API.Repositories;
+using LibraryStore.Domain.Entities;
+using LibraryStore.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Identity;

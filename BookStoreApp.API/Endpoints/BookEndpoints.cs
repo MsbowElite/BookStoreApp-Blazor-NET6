@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using BookStoreApp.API.Data;
 using BookStoreApp.API.Endpoints.Internal;
 using BookStoreApp.API.Models.Book;
-using BookStoreApp.API.Repositories;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
+using LibraryStore.Domain.Entities;
+using LibraryStore.Domain.Repositories;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BookStoreApp.API.Endpoints
