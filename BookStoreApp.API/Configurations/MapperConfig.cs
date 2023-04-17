@@ -2,6 +2,7 @@
 using BookStoreApp.API.Models.Author;
 using BookStoreApp.API.Models.Book;
 using BookStoreApp.API.Models.User;
+using LibraryStore.Domain.Commands.Book;
 using LibraryStore.Domain.Entities;
 
 namespace BookStoreApp.API.Configurations
@@ -10,6 +11,8 @@ namespace BookStoreApp.API.Configurations
     {
         public MapperConfig()
         {
+            CreateMap<AddBookCommand, Book>();
+
             CreateMap<AuthorReadOnlyDto, Author>().ReverseMap();
             CreateMap<AuthorDetailsDto, Author>().ReverseMap();
             CreateMap<AuthorCreateDto, Author>().ReverseMap();

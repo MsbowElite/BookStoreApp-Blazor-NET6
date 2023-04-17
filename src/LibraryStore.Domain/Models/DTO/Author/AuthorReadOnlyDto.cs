@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace LibraryStore.Domain.Models.DTO.Author
+﻿namespace LibraryStore.Domain.Models.DTO.Author
 {
     public class AuthorReadOnlyDto : BaseDto
     {

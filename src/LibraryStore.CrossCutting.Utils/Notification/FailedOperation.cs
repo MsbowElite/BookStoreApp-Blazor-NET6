@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
-using LibraryStore.CrossCutting.Utils.Notification.Enums;
+﻿using LibraryStore.CrossCutting.Utils.Notification.Enums;
 using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace LibraryStore.CrossCutting.Utils.Notification
 {
@@ -24,6 +23,11 @@ namespace LibraryStore.CrossCutting.Utils.Notification
         public FailedOperation(Messages messages)
         {
             Messages = messages;
+        }
+
+        public FailedOperation()
+        {
+            Messages = new Messages();
         }
 
         [JsonPropertyName("messages")]

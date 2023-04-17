@@ -1,6 +1,5 @@
 ﻿using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
@@ -27,7 +26,7 @@ namespace BookStoreApp.Blazor.WebAssembly.UI.Providers
 
             var tokenContent = jwtSecurityTokenHandler.ReadJwtToken(savedToken);
 
-            if(tokenContent.ValidTo < DateTime.Now)
+            if (tokenContent.ValidTo < DateTime.Now)
             {
                 await localStorage.RemoveItemAsync("accessToken");
                 return new AuthenticationState(user);

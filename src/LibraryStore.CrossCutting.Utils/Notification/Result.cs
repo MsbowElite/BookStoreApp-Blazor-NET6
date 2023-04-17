@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using LibraryStore.CrossCutting.Utils.Notification.Enums;
+﻿using LibraryStore.CrossCutting.Utils.Notification.Enums;
 using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
 
 namespace LibraryStore.CrossCutting.Utils.Notification
@@ -29,8 +28,13 @@ namespace LibraryStore.CrossCutting.Utils.Notification
         public static IOperation CreateFailure(ErrorCodes code)
         {
             return new FailedOperation(code);
-
         }
+
+        public static IOperation CreateFailure()
+        {
+            return new FailedOperation();
+        }
+
         public static IOperation<T> CreateFailure<T>(ErrorCodes code)
         {
             return new FailedOperation<T>(code);

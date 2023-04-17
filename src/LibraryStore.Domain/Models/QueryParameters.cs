@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryStore.Domain.Models
+﻿namespace LibraryStore.Domain.Models
 {
     public class QueryParameters
     {

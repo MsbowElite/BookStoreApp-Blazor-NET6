@@ -5,7 +5,7 @@
 
     }
 
-    public interface IOperation<T>: IOperation
+    public interface IOperation<T> : IOperation
     {
 
     }

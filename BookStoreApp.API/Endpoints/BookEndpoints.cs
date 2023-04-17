@@ -1,8 +1,10 @@
-﻿using AutoMapper;
-using BookStoreApp.API.Endpoints.Internal;
+﻿using BookStoreApp.API.Endpoints.Internal;
 using BookStoreApp.API.Models.Book;
+using LibraryStore.CrossCutting.Utils.Notification;
+using LibraryStore.Domain.Commands.Book;
 using LibraryStore.Domain.Entities;
 using LibraryStore.Domain.Repositories;
+using MediatR;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BookStoreApp.API.Endpoints
@@ -23,19 +25,21 @@ namespace BookStoreApp.API.Endpoints
             app.MapPost(BaseRoute, CreateBookAsync)
                 //.RequireAuthorization("Administrator")
                 .WithName("CreateBook")
-                .Accepts<BookCreateDto>(ContentType)
+                .Accepts<AddBookCommand>(ContentType)
                 .Produces<Book>(201)
                 .Produces<IEnumerable<ValidationFailure>>(400)
                 .WithTags(Tag);
         }
 
-        internal static async Task<IResult> CreateBookAsync(
-            BookCreateDto bookDto, IMapper mapper, IBooksRepository booksRepository)
+        internal static async Task<IResult> CreateBookAsync(AddBookCommand addBookCommand, IMediator mediator)
         {
-            var book = mapper.Map<Book>(bookDto);
-            await booksRepository.AddAsync(book);
+            var response = await mediator.Send(addBookCommand);
+            if (response is SuccessfulOperation<BookCreateDto> successfulOperation)
+            {
+                return Results.Created($"/{BaseRoute}/{successfulOperation.Data.Isbn}", successfulOperation.Data);
+            }
 
-            return Results.Created($"/{BaseRoute}/{book.Isbn}", book);
+            return Results.NoContent();
         }
     }
 }

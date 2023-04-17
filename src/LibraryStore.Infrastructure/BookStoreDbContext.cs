@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using LibraryStore.Domain.Entities;
+﻿using LibraryStore.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

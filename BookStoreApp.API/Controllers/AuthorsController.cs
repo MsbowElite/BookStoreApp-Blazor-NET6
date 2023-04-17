@@ -148,7 +148,7 @@
 //                logger.LogError(ex, $"Error Performing POST in {nameof(PostAuthor)}", authorDto);
 //                return StatusCode(500, Messages.Error500Message);
 //            }
-            
+
 //        }
 
 //        // DELETE: api/Authors/5

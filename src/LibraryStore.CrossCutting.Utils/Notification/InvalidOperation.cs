@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json.Serialization;
-using LibraryStore.CrossCutting.Utils.Notification.Enums;
+﻿using LibraryStore.CrossCutting.Utils.Notification.Enums;
 using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace LibraryStore.CrossCutting.Utils.Notification
 {

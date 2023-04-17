@@ -11,7 +11,7 @@ namespace BookStoreApp.Blazor.WebAssembly.UI.Services.Authentication
         private readonly ILocalStorageService localStorage;
         private readonly AuthenticationStateProvider authenticationStateProvider;
 
-        public AuthenticationService(IClient httpClient, ILocalStorageService localStorage, 
+        public AuthenticationService(IClient httpClient, ILocalStorageService localStorage,
             AuthenticationStateProvider authenticationStateProvider)
             : base(httpClient, localStorage)
         {

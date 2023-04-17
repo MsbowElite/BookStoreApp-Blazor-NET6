@@ -1,8 +1,7 @@
-﻿using Microsoft.OpenApi.Extensions;
-using System.Collections.Generic;
+﻿using LibraryStore.CrossCutting.Utils.Notification.Enums;
+using Microsoft.OpenApi.Extensions;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
-using LibraryStore.CrossCutting.Utils.Notification.Enums;
 
 namespace LibraryStore.CrossCutting.Utils.Notification
 {
@@ -37,6 +36,11 @@ namespace LibraryStore.CrossCutting.Utils.Notification
         {
             if (detail is object)
                 Fields.Add(detail);
+        }
+
+        public Messages()
+        {
+
         }
     }
 }

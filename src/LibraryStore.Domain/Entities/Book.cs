@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LibraryStore.Domain.Entities
+﻿namespace LibraryStore.Domain.Entities
 {
     public partial class Book
     {

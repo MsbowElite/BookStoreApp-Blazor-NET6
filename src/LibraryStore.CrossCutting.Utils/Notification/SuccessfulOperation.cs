@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
+﻿using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace LibraryStore.CrossCutting.Utils.Notification
 {

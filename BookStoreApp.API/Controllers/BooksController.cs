@@ -69,7 +69,7 @@
 //        [Authorize(Roles = "Administrator")]
 //        public async Task<IActionResult> PutBook(int id, BookUpdateDto bookDto)
 //        {
-            
+
 //            if (id != bookDto.Id)
 //            {
 //                return BadRequest();
@@ -152,7 +152,7 @@
 //            var url = HttpContext.Request.Host.Value;
 //            var ext = Path.GetExtension(imageName);
 //            var fileName = $"{Guid.NewGuid()}{ext}";
-            
+
 //            var path = $"{webHostEnvironment.WebRootPath}\\bookcoverimages\\{fileName}";
 
 //            byte[] image = Convert.FromBase64String(imageBase64);

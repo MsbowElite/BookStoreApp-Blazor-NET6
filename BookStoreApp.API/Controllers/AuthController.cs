@@ -31,35 +31,35 @@
 //            this.configuration = configuration;
 //        }
 
-//        [HttpPost]
-//        [Route("register")]
-//        public async Task<IActionResult> Register(UserDto userDto)
+//[HttpPost]
+//[Route("register")]
+//public async Task<IActionResult> Register(UserDto userDto)
+//{
+//    logger.LogInformation($"Registration Attempt for {userDto.Email} ");
+//    try
+//    {
+//        var user = mapper.Map<ApiUser>(userDto);
+//        user.UserName = userDto.Email;
+//        var result = await userManager.CreateAsync(user, userDto.Password);
+
+//        if (result.Succeeded == false)
 //        {
-//            logger.LogInformation($"Registration Attempt for {userDto.Email} ");
-//            try
+//            foreach (var error in result.Errors)
 //            {
-//                var user = mapper.Map<ApiUser>(userDto);
-//                user.UserName = userDto.Email;
-//                var result = await userManager.CreateAsync(user, userDto.Password);
-
-//                if (result.Succeeded == false)
-//                {
-//                    foreach (var error in result.Errors)
-//                    {
-//                        ModelState.AddModelError(error.Code, error.Description);
-//                    }
-//                    return BadRequest(ModelState);
-//                }
-
-//                await userManager.AddToRoleAsync(user, "User");
-//                return Accepted();
+//                ModelState.AddModelError(error.Code, error.Description);
 //            }
-//            catch (Exception ex)
-//            {
-//                logger.LogError(ex, $"Something Went Wrong in the {nameof(Register)}");
-//                return Problem($"Something Went Wrong in the {nameof(Register)}", statusCode: 500);
-//            }
+//            return BadRequest(ModelState);
 //        }
+
+//        await userManager.AddToRoleAsync(user, "User");
+//        return Accepted();
+//    }
+//    catch (Exception ex)
+//    {
+//        logger.LogError(ex, $"Something Went Wrong in the {nameof(Register)}");
+//        return Problem($"Something Went Wrong in the {nameof(Register)}", statusCode: 500);
+//    }
+//}
 
 //        [HttpPost]
 //        [Route("login")]
