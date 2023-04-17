@@ -3,6 +3,7 @@ using BookStoreApp.API.Models.Author;
 using BookStoreApp.API.Models.Book;
 using BookStoreApp.API.Models.User;
 using LibraryStore.Domain.Commands.Book;
+using LibraryStore.Domain.Commands.User;
 using LibraryStore.Domain.Entities;
 
 namespace BookStoreApp.API.Configurations
@@ -12,6 +13,7 @@ namespace BookStoreApp.API.Configurations
         public MapperConfig()
         {
             CreateMap<AddBookCommand, Book>();
+            CreateMap<CreateUserCommand, ApiUser>();
 
             CreateMap<AuthorReadOnlyDto, Author>().ReverseMap();
             CreateMap<AuthorDetailsDto, Author>().ReverseMap();
@@ -27,8 +29,6 @@ namespace BookStoreApp.API.Configurations
             CreateMap<Book, BookDetailsDto>()
                 .ForMember(q => q.AuthorName, d => d.MapFrom(map => $"{map.Author.FirstName} {map.Author.LastName}"))
                 .ReverseMap();
-
-            CreateMap<ApiUser, UserDto>().ReverseMap();
         }
     }
 }

@@ -15,7 +15,6 @@ namespace BookStoreApp.API.Endpoints
 
         public static void AddServices(IServiceCollection services, IConfiguration configuration)
         {
-            throw new NotImplementedException();
         }
 
         public static void DefineEndpoints(IEndpointRouteBuilder app)

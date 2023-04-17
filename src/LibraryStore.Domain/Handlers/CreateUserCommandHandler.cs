@@ -38,7 +38,7 @@ namespace LibraryStore.Domain.Handlers
                 var errorResult = Result.CreateFailure() as FailedOperation;
                 foreach (var error in result.Errors)
                 {
-                    errorResult.Messages.Fields.Add(new MessageDetail() { Field = error.Description, Message = error.Description, Value = error.Code });
+                    errorResult.Messages.Fields.Add(new MessageDetail() { Field = error.Code, Message = error.Description });
                 }
                 return errorResult;
             }
