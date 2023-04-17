@@ -1,4 +1,4 @@
-﻿namespace BookStoreApp.API.Models.User
+﻿namespace LibraryStore.Domain.Models.DTO.User
 {
     public class AuthResponse
     {

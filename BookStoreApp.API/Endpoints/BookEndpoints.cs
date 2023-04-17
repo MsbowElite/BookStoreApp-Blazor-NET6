@@ -23,7 +23,7 @@ namespace BookStoreApp.API.Endpoints
         public static void DefineEndpoints(IEndpointRouteBuilder app)
         {
             app.MapPost(BaseRoute, CreateBookAsync)
-                //.RequireAuthorization("Administrator")
+                .RequireAuthorization("Administrator")
                 .WithName("CreateBook")
                 .Accepts<AddBookCommand>(ContentType)
                 .Produces<Book>(201)

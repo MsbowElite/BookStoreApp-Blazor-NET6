@@ -15,6 +15,11 @@ namespace LibraryStore.CrossCutting.Utils.Notification
             return new SuccessfulOperation<T>(value);
         }
 
+        public static IOperation CreateFailure(ErrorCodes code, List<MessageDetail> field)
+        {
+            return new FailedOperation(code, field);
+        }
+
         public static IOperation<T> CreateFailure<T>(ErrorCodes code, MessageDetail field)
         {
             return new FailedOperation<T>(code, field);

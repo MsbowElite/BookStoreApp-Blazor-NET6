@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LibraryStore.CrossCutting.Utils.Notification;
+using LibraryStore.CrossCutting.Utils.Notification.Enums;
 using LibraryStore.CrossCutting.Utils.Notification.Interfaces;
 using LibraryStore.Domain.Commands.Book;
 using LibraryStore.Domain.Commands.User;
@@ -35,12 +36,12 @@ namespace LibraryStore.Domain.Handlers
 
             if (result.Succeeded == false)
             {
-                var errorResult = Result.CreateFailure() as FailedOperation;
+                List<MessageDetail> messages = new();
                 foreach (var error in result.Errors)
                 {
-                    errorResult.Messages.Fields.Add(new MessageDetail() { Field = error.Code, Message = error.Description });
+                    messages.Add(new MessageDetail() { Field = error.Code, Message = error.Description });
                 }
-                return errorResult;
+                return Result.CreateFailure(ErrorCodes.ValidationFailure, messages);
             }
 
             await _userManager.AddToRoleAsync(user, "User");

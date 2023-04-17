@@ -72,6 +72,8 @@ if (app.Environment.IsDevelopment())
 
 }
 
+app.UseDeveloperExceptionPage();
+
 app.UseEndpoints<Program>();
 
 app.UseSwagger();
